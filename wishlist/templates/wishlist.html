@@ -3,34 +3,35 @@
 {% block content %}
 <nav class="navbar navbar-expand-lg bg-light">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Maureen</a>
-      <div class="" id="navbarSupportedContent">
+        <a class="navbar-brand" href="#">Maureen</a>
+        <div class="" id="navbarSupportedContent">
         <a href="{% url 'wishlist:logout' %}"><button class="btn btn-outline-secondary">Logout</button></a>
-      </div>
     </div>
-  </nav>
+</nav>
 
-<h5>Name: </h5>
-<b>{{name}}</b>
+<div class="wishlist-body">
+    <h5>Name: </h5>
+    <p>{{name}}</p>
 
-<table class="table">
-    <tr>
-    <th>Item Name</th>
-    <th>Item Price</th>
-    <th>Description</th>
-    </tr>
-    {% comment %} Add the data below this line {% endcomment %}
-    {% for item in list_item %}
-    <tr>
-        <th>{{item.item_name}}</th>
-        <th>{{item.item_price}}</th>
-        <th>{{item.description}}</th>
-    </tr>
-    {% endfor %}
-</table>
+    <table class="table wishlist-table">
+        <tr class="table-light">
+            <th>Item Name</th>
+            <th>Item Price</th>
+            <th>Description</th>
+        </tr>
+        {% comment %} Add the data below this line {% endcomment %}
+        {% for item in list_item %}
+        <tr>
+            <td>{{item.item_name}}</td>
+            <td>{{item.item_price}}</td>
+            <td>{{item.description}}</td>
+        </tr>
+        {% endfor %}
+    </table>
 
-<h5>Sesi terakhir login: {{ last_login }}</h5>
+    <h5>Sesi terakhir login: {{ last_login }}</h5>
 
-<a href="{% url 'wishlist:logout' %}"><button class="btn btn-outline-secondary">Logout</button></a>
+    <a href="{% url 'wishlist:logout' %}"><button class="btn btn-outline-secondary">Logout</button></a>
 
+</div>
 {% endblock content %}

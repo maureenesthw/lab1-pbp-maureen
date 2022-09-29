@@ -1,4 +1,8 @@
 
-h1,h2,h3,h4,h5 {
+h1,h2,h3,h4,h5,th {
     color: rgb(56, 29, 125);
+}
+
+.wishlist-body {
+    padding: 0px 200px;
 }
