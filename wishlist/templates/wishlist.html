@@ -1,10 +1,19 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<nav class="navbar navbar-expand-lg bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Maureen</a>
+      <div class="" id="navbarSupportedContent">
+        <a href="{% url 'wishlist:logout' %}"><button class="btn btn-outline-secondary">Logout</button></a>
+      </div>
+    </div>
+  </nav>
+
 <h5>Name: </h5>
 <b>{{name}}</b>
 
-<table>
+<table class="table">
     <tr>
     <th>Item Name</th>
     <th>Item Price</th>
@@ -22,6 +31,6 @@
 
 <h5>Sesi terakhir login: {{ last_login }}</h5>
 
-<button><a href="{% url 'wishlist:logout' %}">Logout</a></button>
+<a href="{% url 'wishlist:logout' %}"><button class="btn btn-outline-secondary">Logout</button></a>
 
 {% endblock content %}
