@@ -7,15 +7,34 @@
 
         for (i=0;i<data.length;i++){
 
-          $(".barang").append(`<tr><td>${data[i].fields.item_name}</td><td>${data[i].fields.item_price}</td><td>${data[i].fields.description}</td></tr>`)
+          $(".barang").append(
+            `<tr>
+                <td>${data[i].fields.item_name}</td>
+                <td>${data[i].fields.item_price}</td>
+                <td>${data[i].fields.description}</td>
+            </tr>`
+            )
       
         }
 
       });
 
       $("#submit_btn").click(function(){
-      $.post("/wishlist/ajax/submit", {item_name: $("#item_name").val(),item_price:parseInt($("#item_price").val()),description:$("#description").val()} )
-      $(".barang").append(`<tr><td>${$("#item_name").val()}</td><td>${parseInt($("#item_price").val())}</td><td>${$("#description").val()}</td></tr>`)
+      $.post(
+        "/wishlist/ajax/submit", 
+        {
+            item_name: $("#item_name").val(),
+            item_price:parseInt($("#item_price").val()),
+            description:$("#description").val()
+        } 
+        )
+      $(".barang").append(
+        `<tr>
+            <td>${$("#item_name").val()}</td>
+            <td>${parseInt($("#item_price").val())}</td>
+            <td>${$("#description").val()}</td>
+        </tr>`
+        )
       })
   });
   </script>
